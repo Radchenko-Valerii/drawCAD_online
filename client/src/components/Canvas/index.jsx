@@ -4,8 +4,8 @@ import styles from "./canvas.module.scss"
 
 const Canvas = () => {
   return (
-    <div>
-      
+    <div className={styles.canvas}>
+      <canvas width={840} height={594}/>
     </div>
   );
 }
