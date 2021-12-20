@@ -9,3 +9,13 @@
   width: 100%;
   box-shadow: 0 4px 4px black;
 }
+
+.brush{
+  height: 25px;
+  width: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-size: cover;
+  background: url(./../../assets/image/brush.png) no-repeat center center; 
+}
