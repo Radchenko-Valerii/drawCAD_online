@@ -3,7 +3,7 @@
 
 >This app was help students draw details in browser app with supporting team work.
 
-**Stack of technologies (updateble):**
+**Stack of technologies (updatable):**
 -React
 -WebSockets
 -MobX
