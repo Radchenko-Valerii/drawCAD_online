@@ -8,4 +8,66 @@
   align-items: center;
   width: 100%;
   box-shadow: 0 4px 4px black;
+
+  button{
+    height: 25px;
+    width: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-size: cover;
+  }    
 }
+
+.brush{
+  margin-left: 10px;
+  background: url(./../../assets/image/brush.png) no-repeat center center; 
+}
+
+.eraser{
+  margin-left: 10px;
+  background: url(./../../assets/image/eraser.png) no-repeat center center; 
+}
+
+.line{
+  margin-left: 10px;
+  background: url(./../../assets/image/line.png) no-repeat center center; 
+}
+
+.circle{
+  margin-left: 10px;
+  background: url(./../../assets/image/circle.png) no-repeat center center; 
+}
+
+.rect{
+  margin-left: 10px;
+  background: url(./../../assets/image/rect.png) no-repeat center center; 
+}
+
+.palitra{
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.undo{
+  margin-left: auto;
+  margin-right: 10px;
+  background: url(./../../assets/image/undo.png) no-repeat center center; 
+}
+
+.redo{
+  margin-right: 10px;
+  background: url(./../../assets/image/redo.png) no-repeat center center; 
+}
+
+.save{
+  margin-right: 10px;
+  background: url(./../../assets/image/save.png) no-repeat center center; 
+}
+
+
+

@@ -1,2 +1,12 @@
 @import "../../styles/variables.scss";
 
+.toolsettingsbar{
+  height: $toolsbar-height;
+  background-color: white;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 4px black;
+  margin-top: $toolsbar-height;
+}
