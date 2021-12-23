@@ -30,7 +30,8 @@ export default class Circle extends Tool {
       let currentY = event.pageY - event.target.offsetTop;
       let width = currentX - this.startX;
       let height = currentY - this.startY;
-      let radius = Math.max(width, height);
+      let radius = Math.sqrt(width**2 + height**2);
+      console.log(radius)
       this.draw(this.startX, this.startY, radius);
     }
   }
@@ -43,12 +44,11 @@ export default class Circle extends Tool {
       this.ctx.drawImage(img, 0, 0, this.canvas.width, this.canvas.height);
       this.ctx.beginPath()
       
-      this.ctx.ellipse(x, y, radius, radius, 0, 0, 2*Math.PI);
+      this.ctx.arc(x, y, radius, 0, 2*Math.PI, true);
       // this.ctx.fill("evenodd");
       this.ctx.stroke();
       this.ctx.strokeStyle = "#000000";
     } 
-    
   }
 
 }
