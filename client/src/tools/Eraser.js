@@ -32,7 +32,7 @@ export default class Eraser extends Tool {
     this.ctx.lineTo(x, y);
     this.ctx.stroke();
     this.ctx.strokeStyle = "white"
-    console.log('paint')
+    
   }
 
 }

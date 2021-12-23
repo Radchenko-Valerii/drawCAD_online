@@ -31,7 +31,6 @@ export default class Circle extends Tool {
       let width = currentX - this.startX;
       let height = currentY - this.startY;
       let radius = Math.sqrt(width**2 + height**2);
-      console.log(radius)
       this.draw(this.startX, this.startY, radius);
     }
   }

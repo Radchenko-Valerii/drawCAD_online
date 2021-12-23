@@ -44,7 +44,7 @@ export default class Line extends Tool {
       this.ctx.lineWidth = 1;
       this.ctx.stroke(); 
       this.ctx.strokeStyle = "#000000";
-      console.log('draw')
+      
     } 
     
   }
