@@ -1,6 +1,6 @@
 import Tool from "./Tool";
 
-export default class Circle extends Tool {
+export default class Line extends Tool {
   constructor(canvas){
     super(canvas);
     this.listen()
@@ -28,26 +28,25 @@ export default class Circle extends Tool {
     if(this.mouseDown){
       let currentX = event.pageX - event.target.offsetLeft;
       let currentY = event.pageY - event.target.offsetTop;
-      let width = currentX - this.startX;
-      let height = currentY - this.startY;
-      let radius = Math.sqrt(width**2 + height**2);
-      console.log(radius)
-      this.draw(this.startX, this.startY, radius);
+      this.draw(currentX, currentY)
     }
   }
 
-  draw(x, y, radius){
+  draw(x, y){
     const img = new Image();
     img.src = this.savedCanvas;
     img.onload = () => {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx.drawImage(img, 0, 0, this.canvas.width, this.canvas.height);
       this.ctx.beginPath()
-      this.ctx.arc(x, y, radius, 0, 2*Math.PI, true);
-      // this.ctx.fill("evenodd");
-      this.ctx.stroke();
+      this.ctx.moveTo(x, y); 
+      this.ctx.lineTo(this.startX, this.startY ); 
+      this.ctx.lineWidth = 1;
+      this.ctx.stroke(); 
       this.ctx.strokeStyle = "#000000";
+      console.log('draw')
     } 
+    
   }
 
 }
