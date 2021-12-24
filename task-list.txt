@@ -1,0 +1,7 @@
+todo list
+
+- Rewrite tools logic to HOK
+- Add fill tool
+- Rewrite sass modules 
+- Add interactive radius to circle tool
+- Add image input to use as canvas background 
