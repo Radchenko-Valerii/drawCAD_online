@@ -41,9 +41,7 @@ export default class Line extends Tool {
       this.ctx.beginPath()
       this.ctx.moveTo(x, y); 
       this.ctx.lineTo(this.startX, this.startY ); 
-      this.ctx.lineWidth = 1;
       this.ctx.stroke(); 
-      this.ctx.strokeStyle = "#000000";
       
     } 
     
