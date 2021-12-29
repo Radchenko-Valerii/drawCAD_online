@@ -23,8 +23,8 @@ const ToolsBar = () => {
       <button className={styles.circle} title="circle" onClick={()=> toolState.setTool(new Circle(canvasState.canvas))}/>
       <button className={styles.rect} title="rectangle" onClick={()=> toolState.setTool(new Rect(canvasState.canvas))}/>
       <input onChange={e=>changeColor(e)} type="color" className={styles.palitra} title="Fill color"/>
-      <button className={styles.undo} title="undo"/>
-      <button className={styles.redo} title="redo"/>
+      <button onClick={()=> canvasState.undo()} className={styles.undo} title="undo"/>
+      <button onClick={()=> canvasState.redo()} className={styles.redo} title="redo"/>
       <button className={styles.save} title="save"/>
     </div>
   );
