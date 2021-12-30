@@ -3,10 +3,13 @@ import React, { useEffect, useRef } from "react";
 import canvasState from "../../store/canvasState";
 import toolState from "../../store/toolState";
 import Brush from "../../tools/Brush";
+import ModalWindow from "../ModalWindow";
 import styles from "./canvas.module.scss";
 
-const Canvas = observer(() => {
+
+const Canvas = observer((props) => {
   const canvasRef = useRef();
+  
 
   useEffect(() => {
     canvasState.setCanvas(canvasRef.current);
@@ -19,6 +22,7 @@ const Canvas = observer(() => {
 
   return (
     <div className={styles.canvas}>
+      <ModalWindow/>
       <canvas onMouseDown={()=> mouseDownHandler()} ref={canvasRef} width={840} height={594} />
     </div>
   );
