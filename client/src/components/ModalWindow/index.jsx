@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import {useParams} from 'react-router-dom'
 import canvasState from "../../store/canvasState";
 
 const ModalWindow = (props) => {
   const usernameRef = useRef();
   const [modalShow, setModalShow] = useState(true);
-  const params = useParams();
+  
   
 
   const connectionHandler = () => {
@@ -14,35 +13,7 @@ const ModalWindow = (props) => {
     setModalShow(false);
   };
 
-  useEffect(() => {
-    if(canvasState.username){
-      const socket = new WebSocket("ws://localhost:5000/");
-      canvasState.setSocket(socket);
-      canvasState.setSessionId(params.id);
-      socket.onopen = () => {
-        socket.send(JSON.stringify({
-          id: params.id,
-          username: canvasState.username,
-          method: "connection"
-        }))
-      }
-      socket.onmessage = (event) => {
-        let msg = JSON.parse(event.data)
-        switch(msg.method){
-          case "connection":
-            console.log(`User ${msg.username} connect`)
-            break;
-          case "draw":
-            drawHandler(msg)
-            break;      
-        }
-      }
-    }
-  }, [canvasState.username]);
-
-  const drawHandler=(msg)=>{
-
-  }
+  
 
   return (
     <Modal
