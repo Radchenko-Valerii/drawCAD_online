@@ -2,7 +2,7 @@ import Tool from "./Tool";
 
 export default class Rect extends Tool {
   constructor(canvas, socket, id){
-    super(canvas);
+    super(canvas, socket, id);
     this.listen()
   }
 
@@ -18,11 +18,11 @@ export default class Rect extends Tool {
       method: "draw",
       id: this.id,
       figure: {
-        type: "brush",
+        type: "rect",
         x: this.startX,
         y: this.startY,
         width: this.width,
-        height: this.width
+        height: this.height
       }
     }))
   }
