@@ -53,7 +53,7 @@ const Canvas = observer((props) => {
     const ctx = canvasRef.current.getContext('2d');
     switch (figure.type){
       case "brush": 
-        Brush.draw(ctx, figure.x, figure.y)
+        Brush.draw(ctx, figure.x, figure.y, figure.color)
         break
       case "eraser":
         Eraser.draw(ctx, figure.x, figure.y, "white")
@@ -62,7 +62,7 @@ const Canvas = observer((props) => {
         ctx.beginPath();
         break;
       case "rect":
-        Rect.staticDraw(ctx, figure.x, figure.y, figure.width, figure.height)
+        Rect.staticDraw(ctx, figure.x, figure.y, figure.width, figure.height, figure.color)
     }
   }
 

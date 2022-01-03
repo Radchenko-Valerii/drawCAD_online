@@ -22,7 +22,8 @@ export default class Rect extends Tool {
         x: this.startX,
         y: this.startY,
         width: this.width,
-        height: this.height
+        height: this.height,
+        color: this.ctx.fillStyle
       }
     }))
   }
@@ -45,7 +46,8 @@ export default class Rect extends Tool {
     }
   }
 
-  static staticDraw(ctx, x, y, width, height){
+  static staticDraw(ctx, x, y, width, height, color){
+      ctx.fillStyle = color;
       ctx.beginPath()
       ctx.rect(x, y, width, height);
       ctx.fill();

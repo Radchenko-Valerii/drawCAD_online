@@ -41,7 +41,8 @@ export default class Brush extends Tool {
         figure: {
           type: "brush",
           x: event.pageX - event.target.offsetLeft,
-          y: event.pageY - event.target.offsetTop
+          y: event.pageY - event.target.offsetTop,
+          color: this.ctx.strokeStyle
         }
       }))
     }
