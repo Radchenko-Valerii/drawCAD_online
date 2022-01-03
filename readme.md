@@ -8,3 +8,6 @@
 -WebSockets
 -MobX
 -Express
+
+## TO START: 
+### RUN ./start-dev.sh
