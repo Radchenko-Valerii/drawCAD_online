@@ -15,6 +15,16 @@ const ToolsBar = () => {
     toolState.setFillColor(e.target.value)
   }
 
+  const download = () =>{
+    const dataURL = canvasState.canvas.toDataURL();
+    const a = document.createElement('a');
+    a.href = dataURL;
+    a.download = canvasState.sessionId + ".jpg";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a)
+  }
+
   return (
     <div className={styles.toolsbar}>
       <button className={styles.brush} title="brush" onClick={()=> toolState.setTool(new Brush(canvasState.canvas, canvasState.socket, canvasState.sessionId))}/>
@@ -25,7 +35,7 @@ const ToolsBar = () => {
       <input onChange={e=>changeColor(e)} type="color" className={styles.palitra} title="Fill color"/>
       <button onClick={()=> canvasState.undo()} className={styles.undo} title="undo"/>
       <button onClick={()=> canvasState.redo()} className={styles.redo} title="redo"/>
-      <button className={styles.save} title="save"/>
+      <button className={styles.save} onClick={()=> download()} title="save"/>
     </div>
   );
 }
