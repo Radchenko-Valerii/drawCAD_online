@@ -1,4 +1,4 @@
 .*
 !.gitignore
-/node_modules
-./draw-cad_online/node_modules
+/client/node_modules
+/server/node_modules
