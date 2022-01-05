@@ -5,9 +5,13 @@ import styles from "./toolsettingsbar.module.scss";
 const ToolSettingsBar = () => {
   return (
     <div className={styles.toolsettingsbar}>
-      <label style={{ marginLeft: "10px" }} htmlFor="line-width">Stroke line width</label>
+      <label style={{ marginLeft: "10px" }} htmlFor="line-width">
+        Stroke line width
+      </label>
       <input
-        onChange={(e)=>{toolState.setLineWidth(e.target.value)}}
+        onChange={(e) => {
+          toolState.setLineWidth(e.target.value);
+        }}
         style={{ margin: "0 10px" }}
         id="line-width"
         type="number"
@@ -15,8 +19,17 @@ const ToolSettingsBar = () => {
         max={50}
         defaultValue={1}
       />
-      <label style={{ marginLeft: "10px" }} htmlFor="stroke-color">Stroke color</label>
-      <input style={{ margin: "0 10px" }} onChange={(e)=>{toolState.setStrokeColor(e.target.value)}} type="color" id="stroke-color" />
+      <label style={{ marginLeft: "10px" }} htmlFor="stroke-color">
+        Stroke color
+      </label>
+      <input
+        style={{ margin: "0 10px", cursor: "pointer" }}
+        onChange={(e) => {
+          toolState.setStrokeColor(e.target.value);
+        }}
+        type="color"
+        id="stroke-color"
+      />
     </div>
   );
 };
